@@ -1,0 +1,204 @@
+h1{
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    color: #C84630;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+#logo{
+padding-left: 70px;
+}
+
+.menu-bar{
+        font-family: 'Heebo', sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        text-align: center;
+        color: #ffffff;
+        background-color: #898989;
+        border-radius: 5px;
+}
+.menu-bar li{
+        display: inline-flex;
+        padding: 5px 40px ;
+}
+
+footer{
+        font-family: 'Heebo', sans-serif;
+        font-weight:600;
+        font-size:20px;
+        text-align: center;
+        color: #C84630;
+        margin: 50px;
+}
+footer a{
+        text-decoration: none;
+        color: #C84630;
+}
+
+.buttonconteiner {
+ display: inline-block;
+ padding: 2px;
+ font-size: 18px;
+ font-family: 'Heebo', sans-serif;
+ width: 85%;
+ }
+
+.datetimebox {
+   display: inline-block;
+   float: right;
+   padding-right: 10px;
+   font-size:18px;
+   font-family: 'Heebo', sans-serif;
+}
+
+.background{
+  display: inline-block;
+  border-radius: 20px;
+  border: 2px solid #333333;
+  transform: translate(0%, 0%);
+  text-align: center;
+  margin: 0px 25px;
+  padding: 3px;
+  font-size: 18px;
+  font-family: 'Heebo', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.shiny{
+   position: absolute;
+   width: 50px;
+   height: 320px;
+   top: -300px;
+   left: -20px;
+   background: #5da271;
+   transform: rotate(45deg);
+   transition: 2s;
+}
+.background:hover .shiny{
+    top: 20px;
+    left: 290px;
+}
+#gobackshiny{
+background: #C84630;
+}
+#logoutshiny{
+background: #C84630;
+}
+
+#login{
+float: right;
+}
+#logout{
+float: right;
+}
+
+.tablezone{
+    background-color: #ffffff;
+    width: 100%;
+    border: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1%;
+    font-family: 'Heebo', sans-serif;
+}
+
+.table{
+  background-color: #696969;
+}
+
+.tableheading{
+  background-color: #333333;
+    width: 100%;
+    border: 15px;
+    font-size: 18px;
+    text-align: center;
+    padding: auto;
+    margin-top: 2%;
+    font-family: 'Heebo', sans-serif;
+    color:#ffffff;
+}
+
+th,td{
+ padding: 2px;
+  border:solid 2px #ED6A5A;
+  text-align: center;
+
+}
+
+h3{
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+.form-register {
+    background-color: #ffffff;
+    width: 700px;
+    font-size: 18px;
+    font-family: 'Heebo', sans-serif;
+}
+
+.form-register input {
+    width: 100%;
+    border: 15px;
+    font-size: 18px;
+    font-family: 'Heebo', sans-serif;
+}
+.form-register select {
+    border: 15px;
+    font-size: 18px;
+    font-family: 'Heebo', sans-serif;
+}
+#card{
+text-transform: uppercase;
+}
+section {
+  display: flex;
+  flex-flow: row wrap;
+}
+section > div {
+  flex: 1;
+  padding: 2px;
+}
+input[type="radio"] {
+  display: none;
+}
+label {
+  display: block;
+  background: white;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0px 3px 10px -2px;
+  position: relative;
+  cursor: pointer;
+}
+input[type="radio"]:checked + label {
+  background: #5da271;
+  box-shadow: 0px 0px 20px #5da271;
+  &::after {
+    font-family: 'Heebo', sans-serif;
+    border: 2px solid ;
+    font-size: 18px;
+    transform: translateX(-50%);
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background: white;
+  }
+}
+input[type="radio"]#level01:checked + label {
+  background: #C84630;
+  box-shadow: 0px 0px 20px #C84630;
+}
+input[type="radio"]#level02:checked + label {
+  background: #C84630;
+  box-shadow: 0px 0px 20px #C84630;
+}
+

@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
++anyhost
+GET     /                           controllers.HomeController.index()
++anyhost
+GET    /version                    controllers.HomeController.version()
++anyhost
+GET    /patientportal                    controllers.HomeController.patientportal()
++anyhost
+GET    /database                    controllers.HomeController.database()
++anyhost
+GET    /loadpatients                    controllers.HomeController.loadpatients()
++anyhost
+GET    /rooms                    controllers.HomeController.rooms()
++anyhost
+GET    /newpatient                    controllers.HomeController.newpatient()
++anyhost
+GET    /loadtable                    controllers.HomeController.loadtable()
++anyhost
+GET    /getlocal                    controllers.HomeController.getlocal()
++anyhost
+GET    /releasepatient/:n    controllers.HomeController.releasepatient(n:Int)
++anyhost
+GET    /checkpatient/:n    controllers.HomeController.checkpatient(n:String)
++anyhost
++ nocsrf
+POST    /registerpatient				controllers.HomeController.registerpatient(request: Request)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

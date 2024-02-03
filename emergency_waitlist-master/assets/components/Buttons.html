@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Buttons </title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap">
+        <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            .background{
+                position: absolute;
+                border-radius: 20px;
+                border: 2px solid #333333;
+                top: 50%;
+                left: 45%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                width: 70px;
+                padding: 10px;
+                font-size: 20px;
+                font-family: 'Heebo', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            .shiny{
+                position: absolute;
+                width: 50px;
+                height: 320px;
+                top: -300px;
+                left: -20px;
+                background: #5da271;
+                transform: rotate(45deg);
+                transition: 2s;
+            }
+            .background:hover .shiny{
+                top: 20px;
+                left: 290px;
+            }
+            .background_login{
+                position: absolute;
+                border-radius: 20px;
+                border: 2px solid #333333;
+                top: 50%;
+                left: 65%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                width: 70px;
+                padding: 10px;
+                font-size: 20px;
+                font-family: 'Heebo', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            .shiny_login{
+                position: absolute;
+                width: 50px;
+                height: 320px;
+                top: -300px;
+                left: -20px;
+                background: #5da271;
+                transform: rotate(45deg);
+                transition: 2s;
+            }
+            .background_login:hover .shiny_login{
+                top: 20px;
+                left: 290px;
+            }
+        </style>
+    </head>
+        <body>
+           <div class="background"> renew
+            <div class="shiny"></div>
+           </div>
+           <div class="background_login"> login
+            <div class="shiny_login"></div>
+           </div>
+        </body>
+</html>

@@ -1,0 +1,87 @@
+@()
+
+@main("Admin Page") {
+
+    <div class="buttonconteiner">
+      <div class="background" id="renew"> renew
+        <div class="shiny" id="renewshiny"></div>
+      </div>
+
+      <div class="datetimebox" id="datetime">Date-Time</div>
+      <div class="background" id="login"> login
+        <div class="shiny" id="loginshiny"></div>
+      </div>
+    </div>
+
+<form action="/action_page.php">
+  <form class="form-register">
+    <div id="form-total">
+      <h3>Patient infomation</h3>
+      <div class="form-holder">
+        <fieldset>
+          <legend> Name</legend>
+          <input type="text" class="form-control" id="name" placeholder="Name" required>
+        </fieldset>
+      </div>
+      <div class="form-holder">
+        <fieldset>
+          <legend>Card number</legend>
+          <input type="text" class="form-control" id="card" placeholder="Card number" required>
+        </fieldset>
+      </div>
+
+<br>
+  <div class="background" id="submit"> submit
+    <div class="shiny"></div>
+  </div>
+      <br>
+      <h3 id = placeholder> </h3>
+    </div>
+</form>
+
+<script>
+ $.ajax({
+            url: "http://localhost:9000/getlocal",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               $('#datetime').text(res);
+            }
+       });
+
+      $(document).ready(function(){
+    $("#submit").click(function(e){
+        e.preventDefault();
+       let name = $('#name').val();
+       let card_number  = $('#card').val();
+       let thispatient = card_number + ',' + name;
+     $.ajax({
+                url: "http://localhost:9000/checkpatient/" + card_number,
+                 type: 'GET',
+                 dataType: 'json',
+                 success: function(res) {
+                        $('#placeholder').text(res);
+                        }
+    	    });
+	   });
+	     $("#renew").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.newpatient';
+        });
+        $("#goback").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.index';
+        });
+
+	     $("#renew").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.patientportal';
+        });
+
+        $("#login").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.index';
+        });
+    });
+  </script>
+}

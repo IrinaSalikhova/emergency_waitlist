@@ -1,0 +1,139 @@
+@()
+
+@main("Admin Page") {
+
+    <div class="buttonconteiner">
+      <div class="background" id="renew"> renew
+        <div class="shiny" id="renewshiny"></div>
+      </div>
+        <div class="background" id="newpatient"> new patient
+          <div class="shiny" id="newpatientshiny"></div>
+      </div>
+      <div class="datetimebox" id="datetime">Date-Time</div>
+      <div class="background" id="logout"> logout
+        <div class="shiny" id="logoutshiny"></div>
+      </div>
+    </div>
+
+  <div class="tablezone">
+    <table id="rooms">
+      <tr class = "tableheading">
+        <th>ROOM NUMBER</th>
+        <th>DOCTOR</th>
+        <th>PATIENT ID</th>
+        <th>NEXT PATIENT</th>
+      </tr>
+      <tbody>
+      </tbody>
+    </table>
+    <br>
+    <table id="patientslist">
+      <tr class = "tableheading">
+        <th>PATIENT NAME</th>
+        <th>P.CARD NUMBER</th>
+        <th>GENDER</th>
+        <th>DATE OF BIRTH</th>
+        <th>MEDICAL ISSUE</th>
+        <th>PRIORITY</th>
+      </tr>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+<script>
+ $.ajax({
+            url: "http://localhost:9000/getlocal",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               $('#datetime').text(res);
+            }
+       });
+
+       $.ajax({
+            url: "http://localhost:9000/loadpatients",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+            }
+       });
+
+var roomlist = document.getElementById('rooms').getElementsByTagName('tbody')[0];
+      setTimeout(function() { $.ajax({
+            url: "http://localhost:9000/rooms",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               for (let i = 0; i<Object. keys(res). length; i++) {
+                   var newRow = roomlist.insertRow();
+                   var newRN = newRow.insertCell();
+                   var textForRN = document.createTextNode(res[i].roomID);
+                   var newRD = newRow.insertCell();
+                   var textForRD = document.createTextNode(res[i].doctor);
+                   var newRP = newRow.insertCell();
+                   var textForRP = document.createTextNode(res[i].patientAssigned);
+                        newRN.appendChild(textForRN);
+                        newRD.appendChild(textForRD);
+                        newRP.appendChild(textForRP);
+                   var newbutton = newRow.insertCell();
+                   var button = document.createElement('div');
+                   button.setAttribute("class","background");
+                   button.setAttribute("id","room" + i);
+                   button.addEventListener('click',function handleClick() {
+                    $.ajax({
+                url: "http://localhost:9000/releasepatient/" + i,
+                 type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                   location.href='@routes.HomeController.newpatient';
+            }
+    	    });
+               });
+                    var shinybutton = document.createElement('div');
+                   shinybutton.setAttribute("class","shiny");
+                  var text = document.createTextNode("make room");
+                button.appendChild(text);
+                button.appendChild(shinybutton);
+                newbutton.appendChild(button);
+
+               }
+            }
+       });
+        }, 100);
+       var patientlist = document.getElementById('patientslist').getElementsByTagName('tbody')[0];
+        setTimeout(function() { $.ajax({
+            url: "http://localhost:9000/loadtable",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               for (let i = 0; i<Object. keys(res). length; i++) {
+                   var newRow = patientlist.insertRow();
+                   for (var x in res[i]) {
+                        var newCell = newRow.insertCell();
+                        var textForCell = document.createTextNode(res[i][x]);
+                        newCell.appendChild(textForCell);
+                   }
+               }
+            }
+       });
+               }, 150);
+$(document).ready(function(){
+
+
+	     $("#renew").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.index';
+        });
+
+        $("#newpatient").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.newpatient';
+        });
+        $("#logout").click(function(e){
+        e.preventDefault();
+         location.href='@routes.HomeController.patientportal';
+        });
+    });
+  </script>
+}

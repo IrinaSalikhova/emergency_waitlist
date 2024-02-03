@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Design System</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap">
+        <style type="text/css">
+            h1{
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    color: #C84630;
+    font-weight: 700;
+    font-size: 40px;
+    font-weight: bolder;
+    }
+    .menu-bar{
+        font-family: 'Heebo', sans-serif;
+        font-weight:500;
+        font-size:25px;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        background-color: #898989;
+    }
+    .menu-bar ul{
+        list-style-type: none;
+        margin: 0%;
+        padding: 0%;
+        overflow: hidden;
+    }
+    .menu-bar li{
+        display: inline-flex;
+    }
+    .menu-bar a{
+        padding: 40pt;
+    }
+    .menu-bar ul img{
+        margin-top: 15pt;
+    }
+    .background_submit{
+        position: absolute;
+        border-radius: 20px;
+        border: 2px solid #333333;
+        top: 70%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70px;
+        padding: 10px;
+        padding-right: 20pt;
+        font-size: 20px;
+        font-family: 'Heebo', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .shiny_submit{
+        position: absolute;
+        width: 50px;
+        height: 320px;
+        top: -300px;
+        left: -20px;
+        background: #5da271;
+        transform: rotate(45deg);
+        transition: 2s;
+    }
+    .background_submit:hover .shiny_submit{
+        top: 20px;
+        left: 290px;
+    }
+    .footer{
+        font-family: 'Heebo', sans-serif;
+        font-weight:500;
+        font-size:20px;
+        font-weight: bold;
+        text-align: center;
+        color: #C84630;
+        margin-top: 42%;
+    }
+    footer a{
+        text-decoration: none;
+        color: #C84630;
+    }
+    input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+        </style>
+
+    </head>
+<body>
+   
+    <form>
+        <h1>Patient information form</h1>
+        <div class = "menu-bar">
+            <ul>
+                <img src ="../emergency_waitlist-master/assets/logo no text resized.png" alt="logo"> </img>
+                <a><li>Home</li></a> 
+                <a><li>Hospital</li></a>  
+                <a><li>Emergency</li></a>
+                <a><li>Contact Us</li></a>
+            </ul>
+        </div>
+
+        <div>
+            <form action="/action_page.php">
+              <label for="fname">Patient Full Name</label>
+              <input type="text" id="fname" name="fullname" placeholder="Your full name...">
+          
+              <label for="lname">Patient Card Number</label>
+              <input id="cardnumber" type="tel" inputmode="numeric" maxlength="10" placeholder="xxxxxxxxxx">
+              
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" placeholder="The date is...">
+              
+              <label for="patientewait">Patients waiting</label>
+              <input type="number" min="0" value="0" id="number" name="numberofpatients" placeholder="The patients in line before you...">
+
+              <label for="waitingtime">Approximate waiting time</label>
+              <input type="time" id="time" name="time" placeholder="Your card number...">
+
+              <div class="background_submit"> submit
+                <div class="shiny_submit"></div>
+            </div>
+            </form>
+          </div>  
+    </form> 
+        <div class = "footer">
+            <footer>
+                Created by <a href="https://github.com/Sawh0006">Mahima Sawhney</a>, <a href="https://github.com/IrinaSalikhova">
+                    Irina Salikhova</a>, <a href="https://github.com/lpch0411">Hung Lai</a>, <a href="https://github.com/Harrislarmena">
+                    Harris Larmena</a>, <a href="https://github.com/Ramim-A">Ramim Aditya</a>, <a href="https://github.com/Hrn-Creator">
+                    Harryson Belizaire</a> and <a>Mahmoud Toumar</a> 
+            </footer>
+        </div>
+</body>
+</html>

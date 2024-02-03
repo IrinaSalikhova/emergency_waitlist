@@ -1,0 +1,122 @@
+
+#header {
+    background-color: #ffffff;
+    color: #C84630;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+}
+
+
+.hello{
+background-color: #898989;
+color: #ffffff;
+  width: 15%;
+  margin: auto;
+  height: 42px;
+  border: 15px;
+  font-size: 20px;
+    float: right;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+    padding-bottom: 10px;
+}
+
+#bodycontainer{
+    position: relative;
+    font-size: 18px;
+    background-color: #C84630; 
+    color: rgb(0, 0, 0);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+  
+}
+
+.functionbox{
+  background-color: #898989;
+  position: relative;
+  width: 100%;
+  height: 13%;
+  border: 15px;
+  font-size: 20px;
+    float: left;
+    text-align: center;
+    font-family: 'Heebo', sans-serif;
+}
+
+.datetimebox1{
+background-color: #5DA271;
+  width: 15%;
+  height: 50%;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Heebo', sans-serif; 
+  padding: 3px;
+  float: left;
+  margin-left: 10%;
+  margin-top: 5px;
+  padding-bottom: 20px;
+}
+
+.datetimebox2{
+  background-color: #5DA271;
+  width: 15%;
+  height: 50%;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Heebo', sans-serif;
+  float: inline-start;
+  padding: 3px;
+  float: left;
+  margin-left: 10%;
+  margin-top: 5px;
+  margin-right: 10%;
+  padding-bottom: 20px;
+}
+
+.tablezone{
+    background-color: #ffff;
+    width: 100%;
+    border: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'Heebo', sans-serif;
+}
+
+.table{
+  background-color: #696969;
+}
+
+.tableheading{
+  background-color: #333333;
+    width: 100%;
+    border: 15px;
+    font-size: 15px;
+    text-align: center;
+    padding: auto;
+    margin-top: 5%;
+    font-family: 'Heebo', sans-serif;
+    color:#ffff;
+}
+
+.databoard{
+  width: 100%;
+    border: 15px;
+    font-size: 15px;
+    text-align: center;
+    padding: auto;
+    margin-top: 5%;
+    font-family: 'Heebo', sans-serif;
+}
+
+
+th,td{
+  height: 30px;
+  border:solid 2px #ED6A5A;
+  text-align: center;
+  width: 150px;
+}
